@@ -6,12 +6,12 @@
 //
 
 final class UserService : UserServiceProtocol {
-    private let neetworkClient: NetworkClient
-    init(neetworkClient: NetworkClient) {
-        self.neetworkClient = neetworkClient
+    private let networkClient: NetworkClient
+    init(networkClient: NetworkClient) {
+        self.networkClient = networkClient
     }
     func fetchUsers() async throws -> [User] {
-        try await neetworkClient.request(
+        try await networkClient.request(
             UserEndpoint.getUsers
         )
     }
